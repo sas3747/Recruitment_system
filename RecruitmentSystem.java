@@ -5,7 +5,8 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.io.*;
 
-public class RecruitmentSystem extends JFrame {
+public class RecruitmentSystem extends JFrame 
+{
     private ArrayList<StaffHire> staffList;
     
     // Text fields for input
@@ -34,10 +35,13 @@ public class RecruitmentSystem extends JFrame {
     private JButton btnClear;
     
     // Main method - entry point of the application
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+{
         // Use SwingUtilities.invokeLater to ensure GUI is created on Event Dispatch Thread
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
+        SwingUtilities.invokeLater(new Runnable() 
+{
+            public void run()
+ {
                 RecruitmentSystem app = new RecruitmentSystem();
                 app.setVisible(true);
             }
@@ -45,7 +49,8 @@ public class RecruitmentSystem extends JFrame {
     }
     
     // Constructor
-    public RecruitmentSystem() {
+    public RecruitmentSystem() 
+{
         staffList = new ArrayList<>();
         
         // Set up the frame
@@ -149,48 +154,66 @@ public class RecruitmentSystem extends JFrame {
         add(buttonPanel, BorderLayout.SOUTH);
         
         // Add action listeners
-        btnAddFullTimeStaff.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        btnAddFullTimeStaff.addActionListener(new ActionListener() 
+{
+            public void actionPerformed(ActionEvent e) 
+{
                 addFullTimeStaff();
             }
         });
-        btnAddPartTimeStaff.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        btnAddPartTimeStaff.addActionListener(new ActionListener() 
+{
+            public void actionPerformed(ActionEvent e)
+ {
                 addPartTimeStaff();
             }
         });
-        btnSetSalary.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        btnSetSalary.addActionListener(new ActionListener() 
+{
+            public void actionPerformed(ActionEvent e)
+ {
                 setSalary();
             }
         });
-        btnSetShifts.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        btnSetShifts.addActionListener(new ActionListener() 
+{
+            public void actionPerformed(ActionEvent e)
+
+ {
                 setShifts();
             }
         });
-        btnTerminate.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        btnTerminate.addActionListener(new ActionListener() 
+{
+            public void actionPerformed(ActionEvent e) 
+{
                 terminateStaff();
             }
         });
         
-        btnDisplay.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        btnDisplay.addActionListener(new ActionListener() 
+
+{
+            public void actionPerformed(ActionEvent e) 
+{
                 displayStaff();
             }
         });
         
-        btnClear.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        btnClear.addActionListener(new ActionListener() 
+{
+            public void actionPerformed(ActionEvent e) 
+{
                 clearFields();
             }
         });
     }
     
     // Method to add full time staff
-    private void addFullTimeStaff() {
-        try {
+    private void addFullTimeStaff()
+ {
+        try 
+{
             int vacancyNumber = Integer.parseInt(txtVacancyNumber.getText());
             String designation = txtDesignation.getText();
             String jobType = txtJobType.getText();
@@ -210,14 +233,17 @@ public class RecruitmentSystem extends JFrame {
             staffList.add(fullTimeStaff);
             JOptionPane.showMessageDialog(this, "Full Time Staff added successfully!");
             clearFields();
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex)
+ {
             JOptionPane.showMessageDialog(this, "Please enter valid numbers for numeric fields.");
         }
     }
     
     // Method to add part time staff
-    private void addPartTimeStaff() {
-        try {
+    private void addPartTimeStaff() 
+{
+        try
+ {
             int vacancyNumber = Integer.parseInt(txtVacancyNumber.getText());
             String designation = txtDesignation.getText();
             String jobType = txtJobType.getText();
@@ -238,82 +264,105 @@ public class RecruitmentSystem extends JFrame {
             staffList.add(partTimeStaff);
             JOptionPane.showMessageDialog(this, "Part Time Staff added successfully!");
             clearFields();
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex)
+ {
             JOptionPane.showMessageDialog(this, "Please enter valid numbers for numeric fields.");
         }
     }
     
     // Method to set salary for full time staff
-    private void setSalary() {
-        try {
+    private void setSalary()
+ {
+        try 
+{
             int vacancyNumber = Integer.parseInt(txtVacancyNumber.getText());
             double newSalary = Double.parseDouble(txtSalary.getText());
             
             boolean found = false;
-            for (StaffHire staff : staffList) {
-                if (staff.getVacancyNumber() == vacancyNumber) {
-                    if (staff instanceof FullTimeStaffHire) {
+            for (StaffHire staff : staffList) 
+{
+                if (staff.getVacancyNumber() == vacancyNumber) 
+{
+                    if (staff instanceof FullTimeStaffHire)
+ {
                         FullTimeStaffHire fullTimeStaff = (FullTimeStaffHire) staff;
-                        fullTimeStaff.setSalary(0);
+                        fullTimeStaff.setSalary(newSalary);
                         found = true;
                         JOptionPane.showMessageDialog(this, "Salary updated successfully!");
                         break;
-                    } else {
+                    } else
+ {
                         JOptionPane.showMessageDialog(this, "This vacancy is not for a full-time staff.");
                     }
                 }
             }
-            if (!found) {
+            if (!found) 
+{
                 JOptionPane.showMessageDialog(this, "Vacancy number not found.");
             }
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex)
+ {
             JOptionPane.showMessageDialog(this, "Please enter valid numbers for numeric fields.");
         }
     }
     
     // Method to set shifts for part time staff
-    private void setShifts() {
-        try {
+    private void setShifts() 
+{
+        try
+ {
             int vacancyNumber = Integer.parseInt(txtVacancyNumber.getText());
             String newShifts = txtShifts.getText();
             
             boolean found = false;
-            for (StaffHire staff : staffList) {
-                if (staff.getVacancyNumber() == vacancyNumber) {
-                    if (staff instanceof PartTimeStaffHire) {
+            for (StaffHire staff : staffList)
+ {
+                if (staff.getVacancyNumber() == vacancyNumber) 
+{
+                    if (staff instanceof PartTimeStaffHire)
+ {
                         PartTimeStaffHire partTimeStaff = (PartTimeStaffHire) staff;
                         partTimeStaff.setShifts(newShifts);
                         found = true;
                         JOptionPane.showMessageDialog(this, "Shifts updated successfully!");
                         break;
-                    } else {
+                    } else
+ {
                         JOptionPane.showMessageDialog(this, "This vacancy is not for a part-time staff.");
                     }
                 }
             }
-            if (!found) {
+            if (!found) 
+{
                 JOptionPane.showMessageDialog(this, "Vacancy number not found.");
             }
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex) 
+{
             JOptionPane.showMessageDialog(this, "Please enter a valid vacancy number.");
         }
     }
     
     // Method to terminate part time staff
-    private void terminateStaff() {
-        try {
+    private void terminateStaff()
+ {
+        try 
+{
             int vacancyNumber = Integer.parseInt(txtVacancyNumber.getText());
             
             boolean found = false;
-            for (StaffHire staff : staffList) {
-                if (staff.getVacancyNumber() == vacancyNumber) {
-                    if (staff instanceof PartTimeStaffHire) {
+            for (StaffHire staff : staffList)
+ {
+                if (staff.getVacancyNumber() == vacancyNumber) 
+{
+                    if (staff instanceof PartTimeStaffHire)
+ {
                         PartTimeStaffHire partTimeStaff = (PartTimeStaffHire) staff;
                         partTimeStaff.terminateStaff();
                         found = true;
                         JOptionPane.showMessageDialog(this, "Staff terminated successfully!");
                         break;
-                    } else {
+                    } else
+ {
                         JOptionPane.showMessageDialog(this, "This vacancy is not for a part-time staff.");
                     }
                 }
@@ -321,16 +370,19 @@ public class RecruitmentSystem extends JFrame {
             if (!found) {
                 JOptionPane.showMessageDialog(this, "Vacancy number not found.");
             }
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex)
+ {
             JOptionPane.showMessageDialog(this, "Please enter a valid vacancy number.");
         }
     }
     
     // Method to display staff information
-    private void displayStaff() {
+    private void displayStaff()
+ {
         int displayNumber = getDisplayNumber();
         if (displayNumber != -1) {
-            if (displayNumber < staffList.size()) {
+            if (displayNumber < staffList.size())
+ {
                 StaffHire staff = staffList.get(displayNumber);
                 // Create a custom dialog to display staff information
                 JFrame displayFrame = new JFrame("Staff Information");
@@ -355,30 +407,36 @@ public class RecruitmentSystem extends JFrame {
                 displayFrame.add(scrollPane);
                 displayFrame.pack();
                 displayFrame.setVisible(true);
-            } else {
+            } else 
+{
                 JOptionPane.showMessageDialog(this, "Invalid display number. Number exceeds list size.");
             }
         }
     }
     
     // Method to get display number
-    private int getDisplayNumber() {
+    private int getDisplayNumber()
+ {
         try {
             int displayNumber = Integer.parseInt(txtDisplayNumber.getText());
-            if (displayNumber >= 0 && displayNumber < staffList.size()) {
+            if (displayNumber >= 0 && displayNumber < staffList.size())
+ {
                 return displayNumber;
-            } else {
+            } else
+ {
                 JOptionPane.showMessageDialog(this, "Display number out of range. Valid range: 0 to " + (staffList.size() - 1));
                 return -1;
             }
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex) 
+{
             JOptionPane.showMessageDialog(this, "Please enter a valid integer for display number.");
             return -1;
         }
     }
     
     // Method to clear input fields
-    private void clearFields() {
+    private void clearFields() 
+{
         txtVacancyNumber.setText("");
         txtDesignation.setText("");
         txtJobType.setText("");
@@ -395,3 +453,4 @@ public class RecruitmentSystem extends JFrame {
         txtDisplayNumber.setText("");
     }
 }
+
