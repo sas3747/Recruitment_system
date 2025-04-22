@@ -1,3 +1,4 @@
+//FullTimeStaffHire.java
 public class FullTimeStaffHire extends StaffHire
  {
     private double salary;
