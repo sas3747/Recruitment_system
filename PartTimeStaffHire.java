@@ -1,6 +1,8 @@
-// PartTimeStaffHire.java
-public class PartTimeStaffHire extends StaffHire {
-    private int workingHour;
+// PartTimeStaffHire class which inherits the staffHire class
+public class PartTimeStaffHire extends StaffHire
+ {
+// additional variable for part time employees
+ private int workingHour;
     private double wagesPerHour;
     private String shifts;
     private boolean terminated;
@@ -9,7 +11,10 @@ public class PartTimeStaffHire extends StaffHire {
     public PartTimeStaffHire(int vacancyNumber, String designation, String jobType, 
                            String staffName, String joiningDate, String qualification, 
                            String appointedBy, boolean joined, int workingHour, 
-                           double wagesPerHour, String shifts) {
+                           double wagesPerHour, String shifts)
+
+ {
+        //call parent constructor for common attributtes
         super(vacancyNumber, designation, jobType, staffName, joiningDate, 
               qualification, appointedBy, joined);
         this.workingHour = workingHour;
@@ -18,49 +23,62 @@ public class PartTimeStaffHire extends StaffHire {
         this.terminated = false;
     }
     
-    // Getters and Setters
-    public int getWorkingHour() {
+    // Accessor method(Getters) and Mutator method(Setters) for the class
+    public int getWorkingHour() 
+{
         return workingHour;
     }
     
-    public void setWorkingHour(int workingHour) {
+    public void setWorkingHour(int workingHour) 
+{
         this.workingHour = workingHour;
     }
     
-    public double getWagesPerHour() {
+    public double getWagesPerHour() 
+{
         return wagesPerHour;
     }
     
-    public void setWagesPerHour(double wagesPerHour) {
+    public void setWagesPerHour(double wagesPerHour)
+ {
         this.wagesPerHour = wagesPerHour;
     }
     
-    public String getShifts() {
+    public String getShifts()
+ {
         return shifts;
     }
     
-    public boolean isTerminated() {
+    public boolean isTerminated()
+ {
         return terminated;
     }
     
-    public void setTerminated(boolean terminated) {
+    public void setTerminated(boolean terminated)
+ {
         this.terminated = terminated;
     }
     
-    // Method to set shifts
-    public void setShifts(String newShifts) {
-        if (isJoined()) {
+    // Method to set shifts for the employee
+    public void setShifts(String newShifts)
+ {
+        if (isJoined())
+ {
             this.shifts = newShifts;
-        } else {
+        } else
+ {
             System.out.println("Cannot set shifts as no staff is appointed yet.");
         }
     }
     
     // Method to terminate staff
-    public void terminateStaff() {
-        if (isTerminated()) {
+    public void terminateStaff() 
+{
+        if (isTerminated())
+ {
             System.out.println("Staff is already terminated.");
-        } else {
+        } else
+ {
             setStaffName("");
             setJoiningDate("");
             setQualification("");
@@ -70,11 +88,13 @@ public class PartTimeStaffHire extends StaffHire {
         }
     }
     
-    // Override display method
+    // Override display method of staffHire class
     @Override
-    public void display() {
+    public void display() 
+{
         super.display();
-        if (isJoined() && !isTerminated()) {
+        if (isJoined() && !isTerminated())
+ {
             System.out.println("Working Hours: " + workingHour);
             System.out.println("Wages Per Hour: " + wagesPerHour);
             System.out.println("Shifts: " + shifts);
