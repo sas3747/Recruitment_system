@@ -1,4 +1,6 @@
-public class StaffHire {
+//StaffHire.java
+public class StaffHire 
+{
     private int vacancyNumber;
     private String designation;
     private String jobType;
@@ -11,7 +13,8 @@ public class StaffHire {
     // Constructor
     public StaffHire(int vacancyNumber, String designation, String jobType, 
                      String staffName, String joiningDate, String qualification, 
-                     String appointedBy, boolean joined) {
+                     String appointedBy, boolean joined) 
+{
         this.vacancyNumber = vacancyNumber;
         this.designation = designation;
         this.jobType = jobType;
@@ -22,78 +25,97 @@ public class StaffHire {
         this.joined = joined;
     }
     
-    // Getters and Setters
-    public int getVacancyNumber() {
+    //Accessor method ( Getters) and Mutator method (Setters)
+   
+ public int getVacancyNumber() 
+{
         return vacancyNumber;
     }
     
-    public void setVacancyNumber(int vacancyNumber) {
+    public void setVacancyNumber(int vacancyNumber) 
+{
         this.vacancyNumber = vacancyNumber;
     }
     
-    public String getDesignation() {
+    public String getDesignation() 
+{
         return designation;
     }
     
-    public void setDesignation(String designation) {
+    public void setDesignation(String designation)
+ {
         this.designation = designation;
     }
     
-    public String getJobType() {
+    public String getJobType()
+ {
         return jobType;
     }
     
-    public void setJobType(String jobType) {
+    public void setJobType(String jobType) 
+{
         this.jobType = jobType;
     }
     
-    public String getStaffName() {
+    public String getStaffName()
+ {
         return staffName;
     }
     
-    public void setStaffName(String staffName) {
+    public void setStaffName(String staffName)
+ {
         this.staffName = staffName;
     }
     
-    public String getJoiningDate() {
+    public String getJoiningDate()
+ {
         return joiningDate;
     }
     
-    public void setJoiningDate(String joiningDate) {
+    public void setJoiningDate(String joiningDate)
+ {
         this.joiningDate = joiningDate;
     }
     
-    public String getQualification() {
+    public String getQualification()
+ {
         return qualification;
     }
     
-    public void setQualification(String qualification) {
+    public void setQualification(String qualification) 
+{
         this.qualification = qualification;
     }
     
-    public String getAppointedBy() {
+    public String getAppointedBy()
+ {
         return appointedBy;
     }
     
-    public void setAppointedBy(String appointedBy) {
+    public void setAppointedBy(String appointedBy)
+ {
         this.appointedBy = appointedBy;
     }
     
-    public boolean isJoined() {
+    public boolean isJoined()
+ {
         return joined;
     }
     
-    public void setJoined(boolean joined) {
+    public void setJoined(boolean joined) 
+{
         this.joined = joined;
     }
     
     // Method to change joined status
-    public void amendJoinedStatus(boolean newStatus) {
+    public void amendJoinedStatus(boolean newStatus) 
+{
         this.joined = newStatus;
     }
     
     // Display method
-    public void display() {
+    public void display() 
+{
         System.out.println("Vacancy Number: " + vacancyNumber);
         System.out.println("Designation: " + designation);
         System.out.println("Job Type: " + jobType);
@@ -104,3 +126,5 @@ public class StaffHire {
         System.out.println("Joined: " + (joined ? "Yes" : "No"));
     }
 }
+
+
