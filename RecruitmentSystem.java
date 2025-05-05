@@ -1,3 +1,4 @@
+
 // RecruitmentSystem.java
 import javax.swing.*;
 import java.awt.*;
@@ -7,6 +8,7 @@ import java.io.*;
 
 public class RecruitmentSystem extends JFrame 
 {
+    //ArrayList to store staff hire records
     private ArrayList<StaffHire> staffList;
     
     // Text fields for input
@@ -453,4 +455,3 @@ public class RecruitmentSystem extends JFrame
         txtDisplayNumber.setText("");
     }
 }
-
