@@ -4,7 +4,8 @@ public class FullTimeStaffHire extends StaffHire
     private double salary;
     private int weeklyFractionalHours;
     
-    // Constructor
+    // Constructor 
+    //Private fields for salary and weekly fractional hours
     public FullTimeStaffHire(int vacancyNumber, String designation, String jobType, 
                            String staffName, String joiningDate, String qualification, 
                            String appointedBy, boolean joined, double salary, 
@@ -29,7 +30,7 @@ public class FullTimeStaffHire extends StaffHire
         return weeklyFractionalHours;
     }
     
-    // Method to set salary
+    // Method to set new salary if the staff has joined
     public void setSalary(double newSalary)
  {
         if (isJoined()) 
@@ -52,6 +53,7 @@ public class FullTimeStaffHire extends StaffHire
     public void display()
  {
         super.display();
+        //If the staff has joined display the salary and weekly fractional hours
         if (isJoined()) 
 {
             System.out.println("Salary: " + salary);
