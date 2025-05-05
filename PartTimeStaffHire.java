@@ -59,7 +59,7 @@ public class PartTimeStaffHire extends StaffHire
         this.terminated = terminated;
     }
     
-    // Method to set shifts for the employee
+    // Method to set shifts if the staff has joined
     public void setShifts(String newShifts)
  {
         if (isJoined())
@@ -78,7 +78,9 @@ public class PartTimeStaffHire extends StaffHire
  {
             System.out.println("Staff is already terminated.");
         } else
- {
+       
+        //Clear staff details and mark as terminated
+        {
             setStaffName("");
             setJoiningDate("");
             setQualification("");
@@ -93,6 +95,7 @@ public class PartTimeStaffHire extends StaffHire
     public void display() 
 {
         super.display();
+        // If the staff has joined and is not terminated, display the working hours, wages per hour, shifts, and income per day
         if (isJoined() && !isTerminated())
  {
             System.out.println("Working Hours: " + workingHour);
@@ -100,6 +103,7 @@ public class PartTimeStaffHire extends StaffHire
             System.out.println("Shifts: " + shifts);
             System.out.println("Income Per Day: " + (workingHour * wagesPerHour));
         }
+        //Display termination status
         System.out.println("Terminated: " + (terminated ? "Yes" : "No"));
     }
 }
