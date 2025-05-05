@@ -1,3 +1,4 @@
+
 //StaffHire.java
 public class StaffHire 
 {
@@ -30,7 +31,9 @@ public class StaffHire
  public int getVacancyNumber() 
 {
         return vacancyNumber;
+        
     }
+    
     
     public void setVacancyNumber(int vacancyNumber) 
 {
@@ -126,5 +129,3 @@ public class StaffHire
         System.out.println("Joined: " + (joined ? "Yes" : "No"));
     }
 }
-
-
